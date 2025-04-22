@@ -13,6 +13,9 @@ class DefaultLangProvider(
     override fun generateTranslations(
         wrapperLookup: RegistryWrapper.WrapperLookup?, translationBuilder: TranslationBuilder
     ) {
+        translationBuilder.add("jade.modName.${ReninjaCraft.MOD_ID}", "蕾忍工艺")
+        translationBuilder.add("modmenu.nameTranslation.${ReninjaCraft.MOD_ID}", "蕾忍工艺")
+
         translationBuilder.add("itemGroup.${ReninjaCraft.MOD_ID}.reninja_group", "蕾忍工艺")
         translationBuilder.add("item.${ReninjaCraft.MOD_ID}.rekara", "蕾珂拉")
         translationBuilder.add("item.${ReninjaCraft.MOD_ID}.rekara_ore", "蕾珂拉矿")

@@ -12,6 +12,8 @@ object ModItemGroups {
     val reninjaItemGroups = mutableMapOf<String, ItemGroup>()
 
     fun initialize() {
+        ReninjaCraft.logger.info("Initializing item groups")
+
         reninjaItemGroups.put("reninja_group", register("reninja_group", "rekara"))
     }
 

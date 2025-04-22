@@ -1,54 +1,54 @@
 {
-	"schemaVersion": 1,
-	"id": "reninja-craft",
-	"version": "${version}",
-	"name": "Reninja Craft",
-	"description": "Be a Reninja! Find Rekara and be the most powerful Reninja in the world.",
-	"authors": [
-		"HCG"
-	],
-	"contact": {
-		"homepage": "https://github.com/HCGStudio/ReninjaCraft",
-		"sources": "https://github.com/HCGStudio/ReninjaCraft"
-	},
-	"license": "MIT",
-	"icon": "assets/reninjacraft/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			{
-				"value": "com.hcgstudio.reninjacraft.ReninjaCraft",
-				"adapter": "kotlin"
-			}
-		],
-		"client": [
-			{
-				"value": "com.hcgstudio.reninjacraft.ReninjaCraftClient",
-				"adapter": "kotlin"
-			}
-		],
-		"fabric-datagen": [
-			{
-				"value": "com.hcgstudio.reninjacraft.ReninjaCraftDataGenerator",
-				"adapter": "kotlin"
-			}
-		]
-	},
-	"mixins": [
-		"reninja-craft.mixins.json",
-		{
-			"config": "reninja-craft.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.16.13",
-		"minecraft": "~1.21.5",
-		"java": ">=21",
-		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "reninjacraft",
+  "version": "${version}",
+  "name": "Reninja Craft",
+  "description": "Be a Reninja! Find Rekara and be the most powerful Reninja in the world.",
+  "authors": [
+    "HCG"
+  ],
+  "contact": {
+    "homepage": "https://github.com/HCGStudio/ReninjaCraft",
+    "sources": "https://github.com/HCGStudio/ReninjaCraft"
+  },
+  "license": "MIT",
+  "icon": "assets/reninjacraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "com.hcgstudio.reninjacraft.ReninjaCraft",
+        "adapter": "kotlin"
+      }
+    ],
+    "client": [
+      {
+        "value": "com.hcgstudio.reninjacraft.ReninjaCraftClient",
+        "adapter": "kotlin"
+      }
+    ],
+    "fabric-datagen": [
+      {
+        "value": "com.hcgstudio.reninjacraft.ReninjaCraftDataGenerator",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "reninja-craft.mixins.json",
+    {
+      "config": "reninja-craft.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.13",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

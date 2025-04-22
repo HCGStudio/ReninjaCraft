@@ -1,0 +1,11 @@
+{
+  "scared_and_release_ninjutsu": {
+    "subtitle": "sound.reninjacraft.scared_and_release_ninjutsu",
+    "sounds": [
+      {
+        "name": "reninjacraft:scared_and_release_ninjutsu",
+        "volume": 2
+      }
+    ]
+  }
+}

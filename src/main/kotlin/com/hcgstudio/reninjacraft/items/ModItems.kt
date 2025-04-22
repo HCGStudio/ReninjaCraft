@@ -13,7 +13,17 @@ object ModItems {
 
     val reninjaItems = mutableMapOf<String, Item>()
 
-    fun register(
+    fun initialize() {
+        ReninjaCraft.logger.info("Initializing items")
+
+        reninjaItems.putAll(reninjaCommonItems.associateWith { register(it, Item.Settings()) })
+        reninjaItems.putAll(reninjaBlockItems.associateWith { registerBlockItems(it, Item.Settings()) })
+
+        ItemGroupEvents.modifyEntriesEvent(ReninjaCraft.itemGroupKeyOf("reninja_group"))
+            .register { reninjaItems.values.forEach { item -> it.add(item) } }
+    }
+
+    private fun register(
         name: String,
         settings: Item.Settings
     ): Item {
@@ -23,20 +33,13 @@ object ModItems {
         return item
     }
 
-    fun registerBlockItems(
+    private fun registerBlockItems(
         name: String,
         settings: Item.Settings
-    ) : Item {
+    ): Item {
         val itemKey = ReninjaCraft.itemKeyOf(name)
         val blockItem = BlockItem(ModBlocks.reninjaBlocks[name]!!, settings.registryKey(itemKey))
         return Registry.register(Registries.ITEM, itemKey, blockItem)
     }
 
-    fun initialize() {
-        reninjaItems.putAll(reninjaCommonItems.associateWith { register(it, Item.Settings()) })
-        reninjaItems.putAll(reninjaBlockItems.associateWith { registerBlockItems(it, Item.Settings()) })
-
-        ItemGroupEvents.modifyEntriesEvent(ReninjaCraft.itemGroupKeyOf("reninja_group"))
-            .register { reninjaItems.values.forEach { item -> it.add(item) } }
-    }
 }
