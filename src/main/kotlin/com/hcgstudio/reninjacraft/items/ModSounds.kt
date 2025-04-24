@@ -6,7 +6,7 @@ import net.minecraft.registry.Registry
 import net.minecraft.sound.SoundEvent
 
 object ModSounds {
-    private val soundList = listOf("scared_and_release_ninjutsu")
+    private val soundList = listOf("scared_and_release_ninjutsu", "shake_shake_hand")
 
     val reninjaSounds = mutableMapOf<String, SoundEvent>()
 

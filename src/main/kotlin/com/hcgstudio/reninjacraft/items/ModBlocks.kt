@@ -8,7 +8,6 @@ import net.minecraft.block.ExperienceDroppingBlock
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.math.intprovider.UniformIntProvider
-import java.util.function.Function
 
 object ModBlocks {
     val reninjaBlocks = mutableMapOf<String, Block>()
@@ -33,11 +32,11 @@ object ModBlocks {
 
     private fun register(
         name: String,
-        blockFactory: Function<AbstractBlock.Settings, Block>,
+        blockFactory: (AbstractBlock.Settings) -> Block,
         settings: AbstractBlock.Settings,
     ): Block {
         val blockKey = ReninjaCraft.blockKeyOf(name)
-        val block = blockFactory.apply(settings.registryKey(blockKey))
+        val block = blockFactory(settings.registryKey(blockKey))
         reninjaBlocks.put(name, block)
         return Registry.register(Registries.BLOCK, blockKey, block)
     }

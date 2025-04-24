@@ -7,5 +7,14 @@
         "volume": 2
       }
     ]
+  },
+  "shake_shake_hand": {
+    "subtitle": "sound.reninjacraft.shake_shake_hand",
+    "sounds": [
+      {
+        "name": "reninjacraft:shake_shake_hand",
+        "volume": 4
+      }
+    ]
   }
 }

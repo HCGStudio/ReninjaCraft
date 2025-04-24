@@ -1,9 +1,13 @@
 package com.hcgstudio.reninjacraft
 
+import com.hcgstudio.reninjacraft.command.RekaraCommand
+import com.hcgstudio.reninjacraft.component.SyncedRekaraComponent
 import com.hcgstudio.reninjacraft.items.ModBlocks
 import com.hcgstudio.reninjacraft.items.ModItemGroups
 import com.hcgstudio.reninjacraft.items.ModItems
 import com.hcgstudio.reninjacraft.items.ModSounds
+import com.hcgstudio.reninjacraft.ninjutsu.NinjutsuRegistry
+import com.hcgstudio.reninjacraft.payload.EventPayload
 import com.hcgstudio.reninjacraft.world.ModOreGeneration
 import net.fabricmc.api.ModInitializer
 import net.minecraft.block.Block
@@ -51,5 +55,11 @@ object ReninjaCraft : ModInitializer {
         ModOreGeneration.initialize()
 
         ModSounds.initialize()
+
+        NinjutsuRegistry.initialize()
+
+        EventPayload.initialize()
+        SyncedRekaraComponent.initialize()
+        RekaraCommand.initialize()
     }
 }

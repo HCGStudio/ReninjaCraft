@@ -32,6 +32,12 @@
         "value": "com.hcgstudio.reninjacraft.ReninjaCraftDataGenerator",
         "adapter": "kotlin"
       }
+    ],
+    "cardinal-components": [
+      {
+        "value": "com.hcgstudio.reninjacraft.component.SyncedComponent",
+        "adapter": "kotlin"
+      }
     ]
   },
   "mixins": [
@@ -48,7 +54,11 @@
     "fabric-api": "*",
     "fabric-language-kotlin": "*"
   },
-  "suggests": {
-    "another-mod": "*"
+  "suggests": {},
+  "custom": {
+    "cardinal-components": [
+      "reninjacraft:rekara",
+      "reninjacraft:hand"
+    ]
   }
 }

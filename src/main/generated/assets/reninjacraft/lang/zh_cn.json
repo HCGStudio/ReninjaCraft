@@ -1,4 +1,7 @@
 {
+  "commands.reninjacraft.setrekara.success": "已将%1$s的蕾珂拉设置为%2$s",
+  "hud.reninjacraft.hand_hud_text": "手：%1$s/%2$s",
+  "hud.reninjacraft.rekara_hud_text": "蕾珂拉：%1$s/%2$s",
   "item.reninjacraft.deepslate_rekara_ore": "深层蕾珂拉矿",
   "item.reninjacraft.rekara": "蕾珂拉",
   "item.reninjacraft.rekara_ore": "蕾珂拉矿",

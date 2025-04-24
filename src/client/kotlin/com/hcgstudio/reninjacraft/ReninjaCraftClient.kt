@@ -1,5 +1,9 @@
 package com.hcgstudio.reninjacraft
 
+import com.hcgstudio.reninjacraft.casting.NinjutsuCastHandler
+import com.hcgstudio.reninjacraft.client.HudRenderer
+import com.hcgstudio.reninjacraft.client.ServerMessageHandler
+import com.hcgstudio.reninjacraft.config.ModKeyBinding
 import com.hcgstudio.reninjacraft.items.ModSounds
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
@@ -16,7 +20,7 @@ object ReninjaCraftClient : ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register { client: MinecraftClient ->
             if (!hasPlayedMenuSound && client.currentScreen is TitleScreen) {
                 val sound = PositionedSoundInstance.master(
-                    ModSounds.reninjaSounds["scared_and_release_ninjutsu"]!!, // 你注册的自定义 SoundEvent
+                    ModSounds.reninjaSounds["scared_and_release_ninjutsu"]!!,
                     1.0f
                 )
                 client.soundManager.play(sound)
@@ -24,5 +28,11 @@ object ReninjaCraftClient : ClientModInitializer {
                 hasPlayedMenuSound = true
             }
         }
+
+        ModKeyBinding.initialize()
+
+        ServerMessageHandler.initialize()
+        NinjutsuCastHandler.initialize()
+        HudRenderer.initialize()
     }
 }
