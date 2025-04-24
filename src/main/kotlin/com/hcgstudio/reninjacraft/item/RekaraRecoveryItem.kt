@@ -1,4 +1,4 @@
-package com.hcgstudio.reninjacraft.items
+package com.hcgstudio.reninjacraft.item
 
 import com.hcgstudio.reninjacraft.component.SyncedRekaraComponent
 import net.minecraft.entity.LivingEntity

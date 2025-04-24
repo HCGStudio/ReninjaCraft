@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors
 import net.minecraft.world.gen.GenerationStep
 
-object ModOreGeneration {
+object ReninjaOreGeneration {
     private val oreBlocks = listOf("ore_rekara")
 
     fun initialize() {

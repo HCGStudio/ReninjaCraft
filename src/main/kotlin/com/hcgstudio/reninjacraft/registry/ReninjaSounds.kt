@@ -1,14 +1,18 @@
-package com.hcgstudio.reninjacraft.items
+package com.hcgstudio.reninjacraft.registry
 
 import com.hcgstudio.reninjacraft.ReninjaCraft
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.sound.SoundEvent
 
-object ModSounds {
+object ReninjaSounds {
     private val soundList = listOf("scared_and_release_ninjutsu", "shake_shake_hand")
 
-    val reninjaSounds = mutableMapOf<String, SoundEvent>()
+    private val reninjaSounds = mutableMapOf<String, SoundEvent>()
+
+    operator fun get(key: String): SoundEvent? {
+        return reninjaSounds[key]
+    }
 
     fun initialize() {
         ReninjaCraft.logger.info("Initializing sounds")

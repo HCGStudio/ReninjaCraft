@@ -1,6 +1,7 @@
-package com.hcgstudio.reninjacraft.items
+package com.hcgstudio.reninjacraft.registry
 
 import com.hcgstudio.reninjacraft.ReninjaCraft
+import com.hcgstudio.reninjacraft.item.RekaraRecoveryItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.component.type.FoodComponent
 import net.minecraft.item.BlockItem
@@ -8,7 +9,7 @@ import net.minecraft.item.Item
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 
-object ModItems {
+object ReninjaItems {
     private val reninjaCommonItems = emptyList<String>()
     private val reninjaBlockItems = listOf("rekara_ore", "deepslate_rekara_ore")
 
@@ -18,7 +19,13 @@ object ModItems {
         ReninjaCraft.logger.info("Initializing items")
 
         reninjaItems.putAll(reninjaCommonItems.associateWith { register(it, ::Item, Item.Settings()) })
-        reninjaItems.putAll(reninjaBlockItems.associateWith { registerBlockItems(it, Item.Settings()) })
+        reninjaItems.putAll(reninjaBlockItems.associateWith {
+            register(
+                it,
+                { settings -> BlockItem(ReninjaBlocks[it], settings) },
+                Item.Settings()
+            )
+        })
 
         reninjaItems.put(
             "rekara",
@@ -43,14 +50,5 @@ object ModItems {
         val item = itemFactory(settings.registryKey(itemKey))
         Registry.register(Registries.ITEM, itemKey, item)
         return item
-    }
-
-    private fun registerBlockItems(
-        name: String,
-        settings: Item.Settings
-    ): Item {
-        val itemKey = ReninjaCraft.itemKeyOf(name)
-        val blockItem = BlockItem(ModBlocks.reninjaBlocks[name]!!, settings.registryKey(itemKey))
-        return Registry.register(Registries.ITEM, itemKey, blockItem)
     }
 }

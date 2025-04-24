@@ -24,7 +24,7 @@ class SyncedRekaraComponent(val provider: Entity) : RekaraComponent, HandCompone
                     tickCounter = 0
                     it.playerManager.playerList.forEach { player ->
                         val rekaraComponent = componentKey.get(player)
-                        rekaraComponent.rekara += 0F
+                        rekaraComponent.rekara += 0.5F
                     }
                 }
             }

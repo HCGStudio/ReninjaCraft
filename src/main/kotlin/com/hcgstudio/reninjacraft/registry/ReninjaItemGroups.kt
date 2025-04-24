@@ -1,4 +1,4 @@
-package com.hcgstudio.reninjacraft.items
+package com.hcgstudio.reninjacraft.registry
 
 import com.hcgstudio.reninjacraft.ReninjaCraft
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
@@ -8,8 +8,12 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.text.Text
 
-object ModItemGroups {
-    val reninjaItemGroups = mutableMapOf<String, ItemGroup>()
+object ReninjaItemGroups {
+    private val reninjaItemGroups = mutableMapOf<String, ItemGroup>()
+
+    operator fun get(key: String): ItemGroup? {
+        return reninjaItemGroups[key]
+    }
 
     fun initialize() {
         ReninjaCraft.logger.info("Initializing item groups")
@@ -22,7 +26,7 @@ object ModItemGroups {
         icon: String = name,
     ): ItemGroup {
         val itemGroup = FabricItemGroup.builder()
-            .icon { ItemStack(ModItems.reninjaItems[icon]!!) }
+            .icon { ItemStack(ReninjaItems.reninjaItems[icon]!!) }
             .displayName(Text.translatable("itemGroup.${ReninjaCraft.MOD_ID}.${name}"))
             .build()
 

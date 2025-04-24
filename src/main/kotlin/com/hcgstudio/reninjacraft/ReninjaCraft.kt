@@ -2,13 +2,13 @@ package com.hcgstudio.reninjacraft
 
 import com.hcgstudio.reninjacraft.command.RekaraCommand
 import com.hcgstudio.reninjacraft.component.SyncedRekaraComponent
-import com.hcgstudio.reninjacraft.items.ModBlocks
-import com.hcgstudio.reninjacraft.items.ModItemGroups
-import com.hcgstudio.reninjacraft.items.ModItems
-import com.hcgstudio.reninjacraft.items.ModSounds
 import com.hcgstudio.reninjacraft.ninjutsu.NinjutsuRegistry
 import com.hcgstudio.reninjacraft.payload.EventPayload
-import com.hcgstudio.reninjacraft.world.ModOreGeneration
+import com.hcgstudio.reninjacraft.registry.ReninjaBlocks
+import com.hcgstudio.reninjacraft.registry.ReninjaItemGroups
+import com.hcgstudio.reninjacraft.registry.ReninjaItems
+import com.hcgstudio.reninjacraft.registry.ReninjaSounds
+import com.hcgstudio.reninjacraft.world.ReninjaOreGeneration
 import net.fabricmc.api.ModInitializer
 import net.minecraft.block.Block
 import net.minecraft.item.Item
@@ -48,13 +48,13 @@ object ReninjaCraft : ModInitializer {
 
     override fun onInitialize() {
         logger.debug("Start initializing ReninjaCraft")
-        ModBlocks.initialize()
-        ModItemGroups.initialize()
-        ModItems.initialize()
+        ReninjaBlocks.initialize()
+        ReninjaItemGroups.initialize()
+        ReninjaItems.initialize()
 
-        ModOreGeneration.initialize()
+        ReninjaOreGeneration.initialize()
 
-        ModSounds.initialize()
+        ReninjaSounds.initialize()
 
         NinjutsuRegistry.initialize()
 

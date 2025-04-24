@@ -1,4 +1,4 @@
-package com.hcgstudio.reninjacraft.items
+package com.hcgstudio.reninjacraft.registry
 
 import com.hcgstudio.reninjacraft.ReninjaCraft
 import net.minecraft.block.AbstractBlock
@@ -9,8 +9,12 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.math.intprovider.UniformIntProvider
 
-object ModBlocks {
-    val reninjaBlocks = mutableMapOf<String, Block>()
+object ReninjaBlocks {
+    private val reninjaBlocks = mutableMapOf<String, Block>()
+
+    operator fun get(key: String): Block? {
+        return reninjaBlocks[key]
+    }
 
     fun initialize() {
         ReninjaCraft.logger.info("Initializing blocks")

@@ -2,8 +2,8 @@ package com.hcgstudio.reninjacraft.casting
 
 import com.hcgstudio.reninjacraft.ReninjaCraftClient
 import com.hcgstudio.reninjacraft.client.ClientNinjutsuRegistry
-import com.hcgstudio.reninjacraft.items.ModSounds
 import com.hcgstudio.reninjacraft.ninjutsu.NinjutsuKeys
+import com.hcgstudio.reninjacraft.registry.ReninjaSounds
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.minecraft.client.sound.PositionedSoundInstance
 import org.lwjgl.glfw.GLFW
@@ -33,7 +33,7 @@ object NinjutsuCastHandler {
                     return@EndTick
                 }
 
-                ModSounds.reninjaSounds[ninjutsu.soundId]?.run {
+                ReninjaSounds[ninjutsu.soundId]?.run {
                     val sound = PositionedSoundInstance.master(
                         this,
                         1.0f
